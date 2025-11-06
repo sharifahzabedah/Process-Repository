@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process: USP Management- Universal Service Provision</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            /* A large enough value to accommodate content */
+            max-height: 1000px; 
+            transition: max-height 0.5s ease-in;
+        }
+
+        /* Icon rotation for accordion toggle */
+        .accordion-toggle .icon {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        .accordion-toggle.active .icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header: Breadcrumbs and Title -->
+        <header class="mb-8">
+            <!-- Breadcrumbs / Process Hierarchy -->
+            <nav class="text-sm font-medium text-gray-500 mb-2" aria-label="Breadcrumb">
+                <ol class="list-none p-0 inline-flex">
+                    <li class="flex items-center">
+                        <a href="#" class="hover:underline">Repository Home</a>
+                        <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.62c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"/></svg>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="#" class="hover:underline">Corporate Affairs</a>
+                        <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.62c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"/></svg>
+                    </li>
+                    <li class="text-gray-400" aria-current="page">
+                        P-COA-001: USP Management
+                    </li>
+                </ol>
+            </nav>
+            
+            <!-- Container for Title and Actions Menu -->
+            <div class="flex justify-between items-start">
+                <!-- Process Title -->
+                <h1 class="text-4xl font-bold text-gray-900">
+                    [P-COA-001] USP Management
+                </h1>
+
+                <!-- New Actions Dropdown Menu -->
+                <div class="relative inline-block text-left group ml-4">
+                    <button type="button" class="inline-flex justify-center items-center p-2 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Dropdown Menu Panel -->
+                    <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden group-hover:block">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                                Download PDF
+                            </a>
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                Edit Page
+                            </a>
+                            <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 100-2.684 3 3 0 000 2.684zm0 9.316a3 3 0 100-2.684 3 3 0 000 2.684z" /></svg>
+                                Share Link
+                            </a>
+                            <a href="#feedback" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                                Leave Feedback
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New location for Objective and Status -->
+            <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:space-x-8 space-y-4 sm:space-y-0">
+                <!-- Status -->
+                <div>
+                    <dt class="text-sm font-medium text-gray-500">Process Status</dt>
+                    <dd class="mt-1">
+                        <span class="inline-flex items-center rounded-full bg-yellow-100 px-3 py-1 text-sm font-medium text-yellow-800">
+                            <span class="w-2 h-2 mr-2 bg-yellow-500 rounded-full"></span>
+                            Review
+                        </span>
+                    </dd>
+                </div>
+                <!-- Process Objective -->
+                <div class="sm:max-w-2xl">
+                    <dt class="text-sm font-medium text-gray-500">Process Objective</dt>
+                    <dd class="mt-1 text-gray-900">End to end view of USP management from Invitation to tender up to claim reconciliation.</dd>
+                </div>
+            </div>
+        </header>
+        
+-        <!-- [Image of a process flowchart diagram] -->
+
+        <!-- Main Content Grid -->
+        <div class="lg:flex lg:space-x-8">
+
+            <!-- Left Column (Main Content) -->
+            <div class="lg:w-2/3 space-y-8">
+                
+                <!-- NEW: High-Level Process Flow -->
+                <section class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h2 class="text-2xl font-semibold mb-6">High-Level Process Flow</h2>
+                    <div class="overflow-x-auto p-4">
+                        <div class="flex items-center space-x-2 min-w-max">
+                            <!-- Step 1: Requisition -->
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 border-2 border-blue-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-blue-800">1. USP Contract & Award Bidding</span>
+                                    <span class="block text-xs text-blue-600">Initiation</span>
+                                </div>
+                                <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                            
+                            <!-- Step 2: Sourcing & PO -->
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 border-2 border-blue-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-blue-800">2. Project Initiation & Budget</span>
+                                    <span class="block text-xs text-blue-600">PO Issued</span>
+                                </div>
+                                <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+
+                            <!-- Step 3: Receiving -->
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 border-2 border-blue-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-blue-800">3. Site Acquisition & Permit</span>
+                                    <span class="block text-xs text-blue-600">SSF approval</span>
+                                </div>
+                                <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+
+                            <!-- Step 4: Invoicing -->
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 border-2 border-blue-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-blue-800">4. Project Rollout</span>
+                                    <span class="block text-xs text-blue-600">Implementation</span>
+                                </div>
+                                <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+
+                            <!-- Step 5: Payment -->
+                            <div class="flex items-center">
+                                <div class="bg-green-100 border-2 border-green-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-green-800">5. Site Integration & RFS</span>
+                                    <span class="block text-xs text-green-600">Ready for Service</span>
+                            </div>
+                            <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            
+                            <!-- Step 6: Payment -->
+                            <div class="flex items-center">
+                                <div class="bg-green-100 border-2 border-green-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-green-800">6. Post Roll Out</span>
+                                    <span class="block text-xs text-green-600">Project Completion</span>
+                                </div>
+                                <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            
+                            <!-- Step 7: Payment -->
+                            <div class="flex items-center">
+                                <div class="bg-green-100 border-2 border-green-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-green-800">7. Financial Self Declaration</span>
+                                    <span class="block text-xs text-green-600">FSS</span>
+                            </div>
+                            <svg class="w-8 h-8 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            
+                            <!-- Step 8: Payment -->
+                            <div class="flex items-center">
+                                <div class="bg-green-100 border-2 border-green-500 rounded-lg p-4 text-center">
+                                    <span class="font-semibold text-green-800">8. Claim & Reimburstment</span>
+                                    <span class="block text-xs text-green-600">Reconciliation</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Process Overview & Metadata -->
+                <!-- THIS SECTION IS BEING MOVED TO THE RIGHT SIDEBAR -->
+                <!-- <section class="bg-white p-6 rounded-lg shadow-md border border-gray-200"> ... </section> -->
+
+                <!-- Process Breakdown (L0 -> L1 -> L2) -->
+                <section class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h2 class="text-2xl font-semibold mb-4">Process Breakdown (L0 & L1)</h2>
+                    <p class="text-gray-600 mb-6">Click each L1 activity below to expand its detailed L2 process steps.</p>
+
+                    <!-- Accordion Container -->
+                    <div class="space-y-2">
+                        
+                        <!-- Accordion Item 1 -->
+                        <div>
+                            <button type="button" class="accordion-toggle flex justify-between items-center w-full p-4 font-semibold text-left text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
+                                <span>1.0 Requisition (L1 Activity)</span>
+                                <svg class="icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-5 border border-t-0 border-gray-200 rounded-b-lg">
+                                    <p class="font-medium text-gray-700">Objective: To formally request a good or service and obtain initial approval.</p>
+                                    <p class="mt-4 mb-2 font-semibold text-gray-800">L2 Process Steps:</p>
+                                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li><strong>1.1 Identify Need:</strong> Requester identifies a business need for a good or service.</li>
+                                        <li><strong>1.2 Create Purchase Requisition (PR):</strong> Requester logs into the ERP system and completes the PR form (p/n, quantity, justification).</li>
+                                        <li><strong>1.3 Submit for Approval:</strong> Requester submits the PR to their direct manager for budget approval.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 2 -->
+                        <div>
+                            <button type="button" class="accordion-toggle flex justify-between items-center w-full p-4 font-semibold text-left text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
+                                <span>2.0 Sourcing & PO Creation (L1 Activity)</span>
+                                <svg class="icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-5 border border-t-0 border-gray-200 rounded-b-lg">
+                                    <p class="font-medium text-gray-700">Objective: To source the approved request and issue a formal Purchase Order (PO) to the vendor.</p>
+                                    <p class="mt-4 mb-2 font-semibold text-gray-800">L2 Process Steps:</p>
+                                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li><strong>2.1 Manager Approval:</strong> Manager reviews the PR, checks budget, and either approves or rejects it.</li>
+                                        <li><strong>2.2 Sourcing Review:</strong> (If > $10k) Procurement team receives the approved PR and identifies 3 potential vendors.</li>
+                                        <li><strong>2.3 Vendor Selection:</strong> Procurement selects the vendor based on price, quality, and delivery time.</li>
+                                        <li><strong>2.4 Create Purchase Order (PO):</strong> Procurement creates a formal PO from the PR and issues it to the selected vendor.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 3 -->
+                        <div>
+                            <button type="button" class="accordion-toggle flex justify-between items-center w-full p-4 font-semibold text-left text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
+                                <span>3.0 Receiving & Invoicing (L1 Activity)</span>
+                                <svg class="icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-5 border border-t-0 border-gray-200 rounded-b-lg">
+                                    <p class="mt-4 mb-2 font-semibold text-gray-800">L2 Process Steps:</p>
+                                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li><strong>3.1 Goods Receipt:</strong> Receiving department accepts delivery and performs a 2-way match (Goods vs. PO).</li>
+                                        <li><strong>3.2 Invoice Receipt:</strong> AP receives vendor invoice.</li>
+                                        <li><strong>3.3 3-Way Match:</strong> AP performs 3-way match (PO vs. Goods Receipt vs. Invoice).</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 4 -->
+                        <div>
+                            <button type="button" class="accordion-toggle flex justify-between items-center w-full p-4 font-semibold text-left text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
+                                <span>4.0 Payment (L1 Activity)</span>
+                                <svg class="icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-5 border border-t-0 border-gray-200 rounded-b-lg">
+                                    <p class="mt-4 mb-2 font-semibold text-gray-800">L2 Process Steps:</p>
+                                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li><strong>4.1 Approve for Payment:</strong> AP approves matched invoice.</li>
+                                        <li><strong>4.2 Payment Run:</strong> AP schedules and executes the payment run (e.g., weekly ACH).</li>
+                                        <li><strong>4.3 Post to GL:</strong> Payment is posted to the General Ledger.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Governance & Performance -->
+                <section class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h2 class="text-2xl font-semibold mb-6">Governance & Performance</h2>
+
+                    <!-- RACI Matrix -->
+                    <h3 class="text-xl font-semibold mb-3">RACI Matrix</h3>
+                    <div class="overflow-x-auto rounded-lg border border-gray-200 mb-6">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">L1 Activity / L2 Task</th>
+                                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Requester</th>
+                                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Manager</th>
+                                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Procurement</th>
+                                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Accounts Payable</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-800">1.2 Create PR</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-blue-600">R</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-green-600">A</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-purple-600">C</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-gray-500">I</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-800">2.1 Manager Approval</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-gray-500">I</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-green-600">A</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-gray-500">I</td>
+                                    <td class="px-4 py-3 text-center text-sm"></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-800">2.4 Create PO</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-gray-500">I</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-gray-500">I</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-blue-600">R/A</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-gray-500">I</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-800">3.3 3-Way Match</td>
+                                    <td class="px-4 py-3 text-center text-sm"></td>
+                                    <td class="px-4 py-3 text-center text-sm"></td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-purple-600">C</td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-blue-600">R/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-800">4.2 Payment Run</td>
+                                    <td class="px-4 py-3 text-center text-sm"></td>
+                                    <td class="px-4 py-3 text-center text-sm"></td>
+                                    <td class="px-4 py-3 text-center text-sm"></td>
+                                    <td class="px-4 py-3 text-center text-sm font-bold text-blue-600">R/A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6">
+                        <strong>Key:</strong>
+                        <span class="font-bold text-blue-600">R</span> = Responsible, 
+                        <span class="font-bold text-green-600">A</span> = Accountable, 
+                        <span class="font-bold text-purple-600">C</span> = Consulted, 
+                        <span class="font-bold text-gray-500">I</span> = Informed
+                    </p>
+
+                    <!-- SLAs & KPIs -->
+                    <h3 class="text-xl font-semibold mb-3">Service Level Agreements (SLAs) & KPIs</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>PR Approval Time (SLA):</strong> < 2 business days</li>
+                        <li><strong>PO Issuance Time (SLA):</strong> < 1 business day from approved PR</li>
+                        <li><strong>Invoice Processing Time (SLA):</strong> < 5 business days from 3-way match</li>
+                        <li><strong>KPI:</strong> Days Payable Outstanding (DPO)</li>
+                        <li><strong>KPI:</strong> On-Time Payment Rate (> 98%)</li>
+                    </ul>
+
+                    <!-- Other Information -->
+                    <h3 class="text-xl font-semibold mt-6 mb-3">Other Relevant Information</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Associated Systems:</strong> SAP ERP, Coupa Procurement Suite</li>
+                        <li><strong>Related Policies:</strong> <a href="#" class="text-blue-600 hover:underline">Corporate Spending Policy</a>, <a href="#" class="text-blue-600 hover:underline">Vendor Selection Policy</a></li>
+                        <li><strong>Forms:</strong> <a href="#" class="text-blue-600 hover:underline">New Vendor Onboarding Form</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="lg:w-1/3 mt-8 lg:mt-0">
+                <!-- Sticky Actions Card -->
+                <!-- REMOVED ACTIONS CARD -->
+
+                <!-- MOVED FROM LEFT COLUMN -->
+                <section class="bg-white p-6 rounded-lg shadow-md border border-gray-200 sticky top-8">
+                    <h2 class="text-2xl font-semibold mb-6">Process Overview & Metadata</h2>
+                    
+                    <!-- Metadata Grid -->
+                    <div class="grid grid-cols-1 gap-x-6 gap-y-5">
+                        <!-- Process Objective -->
+                        <!-- MOVED TO TOP -->
+                        
+                        <!-- Status -->
+                        <!-- MOVED TO TOP -->
+
+                        <!-- View Count -->
+                        <div>
+                            <dt class="text-sm font-medium text-gray-500">Process Views</dt>
+                            <dd class="mt-1 font-medium text-gray-900">1,204</dd>
+                        </div>
+
+                        <!-- Active Date -->
+                        <div>
+                            <dt class="text-sm font-medium text-gray-500">Active Date</dt>
+                            <dd class="mt-1 text-gray-900">October 1, 2025</dd>
+                        </div>
+
+                        <!-- Next Review Date -->
+                        <div>
+                            <dt class="text-sm font-medium text-gray-500">Next Review Date</dt>
+                            <dd class="mt-1 text-gray-900">October 1, 2026</dd>
+                        </div>
+                        
+                        <!-- Process Owner(s) -->
+                        <div>
+                            <dt class="text-sm font-medium text-gray-500">Process Owner(s)</dt>
+                            <dd class="mt-1 text-gray-900">Jane Doe (VP, Finance), John Smith (Director, Procurement)</dd>
+                        </div>
+
+                        <!-- Process Designer(s) -->
+                        <div>
+                            <dt class="text-sm font-medium text-gray-500">Process Designer(s)</dt>
+                            <dd class="mt-1 text-gray-900">Process Design Team</dd>
+                        </div>
+
+                        <!-- Target Process User(s) -->
+                        <div class="col-span-1">
+                            <dt class="text-sm font-medium text-gray-500">Target Process User(s)</dt>
+                            <dd class="mt-1 text-gray-900">Procurement Specialists, AP Clerks, Department Managers, Requesters</dd>
+                        </div>
+                    </div>
+                </section>
+                <!-- END MOVED SECTION -->
+
+            </div>
+        </div> <!-- End Main Content Grid -->
+
+        <!-- Feedback & Revision History (MOVED TO LEFT COLUMN) -->
+        <div class="mt-12 space-y-12">
+            <!-- Feedback Section -->
+            <section id="feedback" class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                <h2 class="text-2xl font-semibold mb-4">Feedback & Review</h2>
+                <p class="text-gray-600 mb-6">Is this process documentation helpful? Do you have suggestions for improvement? Please leave your comments below.</p>
+                <form action="#" method="POST">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                            <input type="text" name="name" id="name" class="mt-1 block w-full md:w-1/2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="comment" class="block text-sm font-medium text-gray-700">Your Feedback</label>
+                            <textarea id="comment" name="comment" rows="5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Submit Feedback
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Revision History -->
+            <section>
+                <h2 class="text-2xl font-semibold mb-4">Revision History</h2>
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class_="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Version</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Author</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Summary of Changes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2.0</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Oct 1, 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Process Design Team</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Implemented process. Added L2 steps for Sourcing (2.2).</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.5</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Sep 15, 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Process Design Team</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Updated RACI based on stakeholder review.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.0</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Sep 1, 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Process Design Team</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Initial draft for review.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div> <!-- End Main Container -->
+
+    <!-- JavaScript for Accordion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all accordion toggle buttons
+            const toggles = document.querySelectorAll('.accordion-toggle');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    // Toggle the 'active' class on the button (for styling, e.g., icon rotation)
+                    toggle.classList.toggle('active');
+
+                    // Get the content panel, which is the next element sibling
+                    const content = toggle.nextElementSibling;
+                    
+                    // Toggle the 'open' class on the content panel
+                    content.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
