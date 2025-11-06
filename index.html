@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Repository Home</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header -->
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-gray-900">
+                Process Documentation Repository
+            </h1>
+            <p class="mt-2 text-xl text-gray-600">
+                Welcome. Find, review, and manage all company processes.
+            </p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="mb-10">
+            <label for="search" class="block text-sm font-medium text-gray-700 sr-only">Search</label>
+            <div class="relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <input type="search" name="search" id="search" class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-4 sm:text-sm border-gray-300 rounded-lg" placeholder="Search for a process (e.g., 'Procure-to-Pay', 'P-FIN-001', 'Onboarding')">
+            </div>
+        </div>
+        
+        <!-- Main Content Grid -->
+        <div class="lg:flex lg:space-x-8">
+
+            <!-- Left Column (Main Content) -->
+            <div class="lg:w-2/3 space-y-8">
+                <h2 class="text-3xl font-semibold">Browse by Department</h2>
+
+                <!-- Category: Finance -->
+                <section>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">Finance</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- Process Card: Procure-to-Pay -->
+                        <a href="process_repository.html" class="block p-5 bg-white rounded-lg shadow-md border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-gray-900">(P-FIN-001) Procure-to-Pay</span>
+                                <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Implemented</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Ensure all goods and services are procured, received, and paid for...</p>
+                            <span class="text-xs font-medium text-gray-500">Owner: Jane Doe</span>
+                        </a>
+
+                        <!-- Process Card: Expense Reporting -->
+                        <a href="#" class="block p-5 bg-white rounded-lg shadow-md border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-gray-900">(P-FIN-002) Expense Reporting</span>
+                                <span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">In Review</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Process for submitting, approving, and reimbursing employee expenses.</p>
+                            <span class="text-xs font-medium text-gray-500">Owner: David Lee</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Category: Human Resources -->
+                <section>
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-800">Human Resources</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- Process Card: New Hire Onboarding -->
+                        <a href="#" class="block p-5 bg-white rounded-lg shadow-md border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-gray-900">(P-HR-001) New Hire Onboarding</span>
+                                <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Implemented</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Integrate new employees into the company and provide tools for success.</p>
+                            <span class="text-xs font-medium text-gray-500">Owner: Sarah Chen</span>
+                        </a>
+
+                        <!-- Process Card: Performance Review -->
+                        <a href="#" class="block p-5 bg-white rounded-lg shadow-md border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-gray-900">(P-HR-002) Performance Review</span>
+                                <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Implemented</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Annual process for evaluating employee performance and setting goals.</p>
+                            <span class="text-xs font-medium text-gray-500">Owner: Sarah Chen</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Category: Operations -->
+                <section>
+                    <h3 class="text-2xl font-semibold mb-4 text-red-800">Operations</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- Process Card: Incident Management -->
+                        <a href="#" class="block p-5 bg-white rounded-lg shadow-md border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-gray-900">(P-OPS-001) IT Incident Management</span>
+                                <span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800">Archived</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">To restore normal service operation as quickly as possible (Old version).</p>
+                            <span class="text-xs font-medium text-gray-500">Owner: Mike Brown</span>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="lg:w-1/3 mt-8 lg:mt-0">
+                <div class="sticky top-8 space-y-6">
+                    
+                    <!-- Quick Actions -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">Quick Actions</h3>
+                        <button type="button" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm">
+                            <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                            Create New Process
+                        </button>
+                    </div>
+
+                    <!-- Recently Updated -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">Recently Updated</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#" class="text-sm font-medium text-blue-600 hover:underline">(P-FIN-002) Expense Reporting</a>
+                                <p class="text-xs text-gray-500">Updated 1 day ago</p>
+                            </li>
+                            <li>
+                                <a href="process_repository.html" class="text-sm font-medium text-blue-600 hover:underline">(P-FIN-001) Procure-to-Pay</a>
+                                <p class="text-xs text-gray-500">Updated 3 days ago</p>
+                            </li>
+                            <li>
+                                <a href="#" class="text-sm font-medium text-blue-600 hover:underline">(P-HR-001) New Hire Onboarding</a>
+                                <p class="text-xs text-gray-500">Updated 1 week ago</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- My Watched Processes -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">My Watched Processes</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="process_repository.html" class="text-sm font-medium text-blue-600 hover:underline">(P-FIN-001) Procure-to-Pay</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-sm font-medium text-blue-600 hover:underline">(P-HR-002) Performance Review</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!-- End Main Content Grid -->
+
+    </div> <!-- End Main Container -->
+
+</body>
+</html>
